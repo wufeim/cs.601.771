@@ -98,9 +98,9 @@ def main():
         wall_clock_time_list.append(wall_clock_time)
         wall_clock_time_errors.append(wall_clock_time_error)
 
-    H, W = 4.5, 3.6
+    W, H = 4.5, 3.6
 
-    plt.figure(figsize=[H, W])
+    plt.figure(figsize=[W, H])
     plt.plot([0, 1, 2, 3], flops_list, '^-', label='FLOPs', c='#0082FB')
     plt.gca().set_xticks([0, 1, 2, 3], ['10', '100', '1K', '10K'])
     plt.gca().set_xlabel('Sequence Length')
@@ -109,7 +109,7 @@ def main():
     plt.savefig('flops.png', dpi=300)
 
     plt.cla()
-    plt.figure(figsize=[H, W])
+    plt.figure(figsize=[W, H])
     plt.errorbar(
         [0, 1, 2, 3], memory_list, yerr=memory_errors,
         fmt='^-', label='Memory', c='#0082FB')
@@ -120,7 +120,7 @@ def main():
     plt.savefig('memory.png', dpi=300)
 
     plt.cla()
-    plt.figure(figsize=[H, W])
+    plt.figure(figsize=[W, H])
     plt.errorbar(
         [0, 1, 2, 3], wall_clock_time_list, yerr=wall_clock_time_errors,
         fmt='^-', label='Wall Clock Time', c='#0082FB')
